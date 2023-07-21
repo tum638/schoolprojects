@@ -1,0 +1,49 @@
+# Design Document Template
+
+## Overview
+Coinstrip is a game where two players take turns to move coins leftward across a fixed size board. A coin that is to be moved cannot skip over other coins but can move as many spaces as possible to the left until it is adjacent to the coin on its left. The board has 7 slots in it and at the start of the game, 3 coins are randomly placed in any of the 6 slots. The player who makes the last coin move loses the game.
+
+
+## Procedure
+Setting up the game
+Initialize the game by placing coins randomly onto the board. (Users do not need to worry about this)
+Take in player names and randomly decide which player starts.
+Start the game (while !gameIsOver) (0)
+displayBoard (1)
+Prompt player to make a move(2)
+Determine if the move is valid
+If (!isValidMove), go back to (2)
+Otherwise, change the state of the board using function setResource(resource, change) and flip the player using setPlayer(player)
+Check isGameOver? If true. Stop game and display winner, if false, return to (1)
+Flip the player one more time.
+Tell the player that they won.
+
+
+
+
+## State
+Coinstrip board - represented as as an array of int[]
+The total number of coins represented by int[]
+The current player represented by an int[]. Players will however be instantiated using the player class so that their names are stored somewhere.
+The position of a coin represented by an int.
+The coinstrip game, number of coins, and position of coins will be stored inside the Coinstrip class
+The player name and id will be stored inside the Player class.
+
+
+
+## Functional Requirements
+Coinstrip constructor - to set up the game
+Player Constructor- to set up the players
+displayBoard -to display the current board
+isGameOver- to determine whether the game is done.
+While loop in Program main method that allows players to take turns in a logical manner.
+isValidMove - to check if the user has made a valid move
+setResource - allow user to change coin position
+getResource - allow user to get the position of a coin
+setPlayer - changes the current player to the given player
+getPlayer - returns the number representing the given player
+generateRandomBoard - to generate a board with length n where 4<= n <10
+randomizeCoinPositions - to randomly place coins into random spots within the board.
+
+
+
